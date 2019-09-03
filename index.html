@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Turkish</title>
+    <title>Chickenef</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/aos.css">
@@ -67,7 +67,14 @@
     <div class="Innovoice-section section-padding" id="Innovoice">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" 
+                    data-aos="zoom-in"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                >
                     <div class="section-title innovoice-content">
                         <h2>inovasyonu</h2>
                         <p>Firmamız  Chickenef markası ile fried chicken alanında inovasyon sürecine girmiş, aşağıda sıralanan, ürün ve üretim yöntemlerindeki yenilik, iyileştirme ve geliştirmelerle, geleneksel yöntemlere göre her konuda farklı artılar oluşturarak ,rekabet gücünü artırmıştır.
@@ -76,7 +83,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="section-content">
+                    <div class="section-content"
+                    data-aos="zoom-out"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    >
                         <img src="assets/img/innovation.png" alt="Innovoice">
                     </div>
                 </div>
@@ -143,27 +157,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-title">
+                    <div class="section-title"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000"
+                    >
                         <h2>İletişim Formu</h2>
-                        <p>Drop us a line ! Stay Connected</p>
+                        <!-- <p>Drop us a line ! Stay Connected</p> -->
+                        <p>Bize bir çizgi bırak! Bağlı kalın</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12"
+                    data-aos="flip-down"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                >
                     <div class="contact-form">
                         <form id="form">
                             <p class="output"></p>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="First Name" class="nameFieldOne">
+                                    <input type="text" placeholder="First Name" class="nameFieldOne input">
+                                    <span><i class="fas fa-user"></i></span>
+
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Last Name" class="nameFieldTwo">
+                                    <input type="text" placeholder="Last Name" class="nameFieldTwo input">
+                                    <span><i class="fas fa-user"></i></span>
+
                                 </div>
                             </div>
-                            <input type="email" placeholder="Enter your Email" class="emailField">
-                            <input type="tel" placeholder="Enter your Phone Number" class="phoneField">
+                            <input type="email" placeholder="Enter your Email" class="emailField input">
+                                    <span><i class="fas fa-envelope"></i></span>
+
+                            <input type="tel" placeholder="Enter your Phone Number" class="phoneField input">
+                                    <span><i class="fas fa-phone"></i></span>
+
                             <textarea name="message" placeholder="Write your message" class="textarea"></textarea>
                             <input type="submit" class="button" value="Send Message">
                         </form>

@@ -227,16 +227,26 @@ header img {
   padding-top: 19px;
 }
 .Innovoice-list {
-  box-shadow: 0 0 10px #7e7c7c;
+  box-shadow: 0 0 10px #c3bfbf;
   padding: 50px;
   min-height: 364px;
   line-height: 2;
+  transition: all .2s linear;
+}
+.Innovoice-list:hover {
+  box-shadow: 0 0 10px #7e7c7c;
+  transition: all .2s linear;
 }
 .Innovoice-list ul {
   line-height: 2;
 }
 .Innovoice-list li {
   list-style: none;
+  transition: all .3s linear;
+}
+.Innovoice-list li:hover {
+  color: red;
+  transition: all .3s linear;
 }
 .Innovoice-list li svg {
   padding-left: ;
@@ -332,6 +342,18 @@ input[type="submit"]:hover, button[type="submit"]:hover {
   font-variant: small-caps;
 }
 
+.input {
+  position: relative;
+}
+.contact-form span {
+  position: absolute;
+  left: auto;
+  right: 32px;
+  padding-top: 7px;
+}
+
+
+
 /*.output {
   background: var(--main);
   color: #fff;
@@ -372,7 +394,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
 
 /* Animated Button */
 /* Button */
-.boxed-btn {
+/*.boxed-btn {
   display: inline-block;
   padding: 11px 28px;
   text-decoration: none;
@@ -384,6 +406,20 @@ input[type="submit"]:hover, button[type="submit"]:hover {
   margin-top: 18px;
   box-shadow: 0 0 10px #999494;
   border-radius: 6px;
+}*/
+.boxed-btn {
+  display: inline-block;
+  padding: 9px 28px;
+  text-decoration: none;
+  color: var(--main);
+  font-size: 20px;
+  position: relative;
+  z-index: 9;
+  transition: .3s ease-in-out;
+  margin-top: 30px;
+  background: var(--main);
+  color: #fff;
+  border-radius: 50px;
 }
 .boxed-btn:before {
   content: "";
@@ -417,9 +453,10 @@ input[type="submit"]:hover, button[type="submit"]:hover {
 }
 .boxed-btn:hover {
   box-shadow: none;
-  color: red;
+  color: var(--main);
+  transition: all .3s ease-in-out;
+  background: none;
 }
-
 
 .bordered-btn {
   color: var(--main);

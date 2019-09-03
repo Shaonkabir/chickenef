@@ -13,12 +13,13 @@ $(document).ready(function() {
 
 
 	// Full width Video Section
-	$('.playBtn').on('click', e => {
-		e.preventDefault();
-		console.log('Play Button is clicked')
-	})
+	// $('.playBtn').on('click', e => {
+	// 	e.preventDefault();
+	// 	this.paused ? this.play() : this.pause();
+	// 	console.log('Play Button is clicked')
+	// })
 
-
+	
 
 });
 
@@ -73,3 +74,130 @@ $(window).scroll(function() {
 
 
 
+// Selecting Elements
+const nameFieldOne = document.querySelector('.nameFieldOne')
+const nameFieldTwo = document.querySelector('.nameFieldTwo')
+const emailField = document.querySelector('.emailField')
+const phoneField = document.querySelector('.phoneField')
+const textarea = document.querySelector('.textarea')
+const output = document.querySelector('.output')
+const button = document.querySelector('.button')
+
+// Name Validation Function
+const nameValidation = () => {
+    if(nameFieldOne.value == '' || nameFieldOne.value == null) {
+        output.classList.add('err')
+        output.innerHTML =  `Write your First Name`;
+        return false;
+    } else if(nameFieldOne.value.length <3 ) {
+        output.innerHTML = `Name should be atleast 3 Charcter`;
+        output.classList.add('err');
+        return false;
+    } else if(nameFieldTwo.value == '' || nameFieldTwo.value == null) {
+        output.classList.add('err')
+        output.innerHTML =  `Write your Last Name`;
+        return false;
+    } else if(nameFieldTwo.value.length <3 ) {
+        output.innerHTML = `Name should be atleast 3 Charcter`;
+        output.classList.add('err');
+        return false;
+    } else {
+        output.classList.remove('err')
+        output.innerHTML = '';
+        return true;
+    }
+}
+// Email Validation Function
+const emailValidation = () => {
+    const emailRegExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+
+    if(emailField.value == '' || emailField.value == null) {
+        output.innerHTML = `Enter Your Email`;
+        output.classList.add('err')
+        return false;
+    } else if(emailRegExp.test(emailField.value)) {
+        output.innerHTML = ''
+        return true;
+    } else {
+        output.classList.add('err');
+        output.innerHTML = `Invailed Email Address.`;
+        return false;
+    }
+}
+// Phone Number Validation Function
+ const phoneValidation = () => {
+    const phoneRegExp = /^[01]+[3-9]\d{8}$/ ;
+
+    if(phoneRegExp.test(phoneField.value)) {
+        output.innerHTML = '';
+        return true;
+    } else {
+        output.classList.add('err');
+        output.innerHTML = `Invailed Phone Number`;
+        return false;
+    }
+}
+
+
+// Textarea vaildation 
+const textareaValidation = () => {
+	if(textarea.value == "" || textarea.value == null) {
+        output.classList.add('err')
+        output.innerHTML = `Please Write your message`;
+        return false;
+	} else {
+        output.classList.remove('err')
+        output.innerHTML = '';
+        return true;
+	}
+}
+
+
+// Contact form validation
+function regiseterValidate(e) {
+	e.preventDefault();
+    if(nameValidation() && emailValidation() && phoneValidation() && textareaValidation() ) {
+        output.innerHTML = `Your message send successfull. Thanks for being with us`;
+		output.classList.remove('err');
+		output.style.background =  "#2a8d2a";
+		output.style.color =  "#fff";
+		output.style.display =  "inline-block";
+		output.style.padding =  "10px 26px";
+
+        nameFieldOne.value = '';
+        nameFieldTwo.value = '';
+        emailField.value = '';
+        phoneField.value = '';
+        textarea.value = '';
+
+        return true;
+    }
+}
+
+button.addEventListener('click',regiseterValidate);
+
+
+
+// Video Play Section
+const video = document.querySelector('.video')
+const playBtn = document.querySelector('.playBtn')
+
+const icon = document.querySelector('.playIcon');
+
+playBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+	if(video.paused) {
+		video.play();
+		this.innerHTML = ""
+		icon.innerHTML = `<i class="fas fa-play"></i>`
+	} else {
+		video.pause();
+		icon.innerHTML = `<i class="fas fa-pause"></i>`
+		this.innerHTML = ""
+	}
+
+})
+
+
+// Animate on Scroll
+   AOS.init();
